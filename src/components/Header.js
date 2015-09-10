@@ -19,19 +19,19 @@ export default class Item extends Component {
   }
 
   handleNewTodoKeyDown(event) {
-		if (event.keyCode !== ENTER_KEY) { return; }
+    if (event.keyCode !== ENTER_KEY) { return; }
 
-		event.preventDefault();
+    event.preventDefault();
 
-		var val = this.state.newItem.trim();
+    var val = this.state.newItem.trim();
 
-		if (val) {
-			$action.dynamic(() => {
-        $store.todoList.add().setValue({content: val});
+    if (val) {
+      $action.dynamic(() => {
+        $store.todoList.add().setValue({ content: val });
       })
-			this.setState({newItem: ''});
-		}
-	}
+      this.setState({ newItem: '' });
+    }
+  }
 
   render() {
     return (
